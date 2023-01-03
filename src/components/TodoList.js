@@ -1,20 +1,32 @@
 import React from 'react';
+import {useContext} from "react";
 import CustomLi from "./CustomLi";
+import {List} from "./Syles";
+import {DataContext} from "../App";
+
 export const UlContext = React.createContext()
+
+
 
 const TodoList = () => {
 
     return (
         <>
-            <UlContext.Provider value={{id:[321312312,123123123,1231231,1111,'ewqeqweqwe']}}>
+            <DataContext.Consumer>
+                {  ({data,method})=> (
+            <UlContext.Provider value={{data,method}}>
+
                 {
-                    <ul>
+                    <List>
                         <CustomLi/>
-                    </ul>
+                    </List>
                 }
             </UlContext.Provider>
+                    )}
+            </DataContext.Consumer>
         </>
     );
+
 };
 
 export default TodoList;
