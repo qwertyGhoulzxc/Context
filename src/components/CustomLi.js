@@ -16,15 +16,12 @@ const CustomLi=()=>{
 
                  <h1>add something</h1>:
                         data.map((i,ii)=>{
-                            return(<ListElem id={ii} key={ii}>{i} <Button onClick={(e)=>{
+                            return(<ListElem id={i.id} key={i.id}>{i.value} <Button onClick={(e)=>{
                                 console.log(method)
-                 const     numb=     e.currentTarget.parentNode.id
+                 const     deletedId=     e.currentTarget.parentNode.id
 
-                                console.log('dsadsasdasd',data)
-                              let newData = data.splice(numb,1)
-                                console.log('new data',newData)
-                                console.log('data',data)
-method(newData)
+                                method(data.filter(obj => obj.id !=deletedId));
+
 
                             }}>delete</Button></ListElem>)
                         })

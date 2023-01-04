@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {StyledForm} from "./Syles";
+import {v4} from "uuid";
 
 const Form = ({data,setData}) => {
 
@@ -9,7 +10,7 @@ const Form = ({data,setData}) => {
       const input=  document.querySelector('#content')
         e.preventDefault()
 
-        setData([...data,input.value])
+        setData([...data,{'id':v4(),"value":input.value}])
 
 input.value=``
 
