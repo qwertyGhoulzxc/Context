@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
         <DataContext.Provider value={{"data":data,"method":setData}}>
-        <Flex>
+        <Flex justcont={'space-between'}>
 <TodoList/>
 <Form data={data} setData={setData} />
         </Flex>

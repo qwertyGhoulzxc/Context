@@ -59,5 +59,9 @@ width: 300px;
 `
 export const Flex = styled.div`
 display: flex;
-  justify-content: space-between;
+  justify-content: ${props => props.justcont};
 `
+
+ export const ColorDiv = styled.div`
+ background: ${props => props.color};
+ `
